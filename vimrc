@@ -55,3 +55,7 @@ endif
 
 " Assume LaTeX for .tex files
 let g:tex_flavor = "latex"
+
+" Whole file text object
+vnoremap ae :<C-U>silent! normal! ggVG<CR>
+omap ae :normal Vae<CR>
