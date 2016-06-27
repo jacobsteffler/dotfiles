@@ -31,7 +31,7 @@ set ignorecase                                  " Ignore case in search...
 set smartcase                                   "  ...except when search contains a capital
 set switchbuf=useopen                           " Switch windows if file is already open
 set tabstop=4 shiftwidth=4                      " Smaller tab stops
-set expandtab softtabstop=4                     " Spaces for tabs
+set expandtab softtabstop=-1                    " Spaces for tabs
 set splitbelow splitright                       " Split directions
 set laststatus=2                                " Always show status bar
 
