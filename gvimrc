@@ -8,4 +8,4 @@ set guioptions=c                    " Hide GUI elements
 set guicursor+=a:blinkon0           " Disable cursor blink
 
 colorscheme solarized               " Set colorscheme
-set bg=light                        " Light background
+set bg=dark                         " Light/dark background
