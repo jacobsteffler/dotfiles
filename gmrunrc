@@ -1,0 +1,3 @@
+# Set terminal
+Terminal = urxvt
+TermExec = ${Terminal} -e
