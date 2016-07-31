@@ -1,7 +1,12 @@
-Style "*" ClickToFocus
+Style * ClickToFocus
+Style * NoIcon
+
+# Special considerations
+Style "URxvt" ResizeHintOverride
 
 DesktopSize 1x1
 
+# Titlebar buttons
 Mouse 1 1 A Close
 Mouse 1 2 A Maximize 100 100
 Mouse 2 2 A Maximize 100 0

@@ -1,30 +1,83 @@
+# Don't treat "lock" keys as modifiers
 IgnoreModifiers L25
 
+# Program launchers
 Key W A 4 Exec $[fvwm_webbrowser]
 Key T A 4 Exec $[fvwm_term]
 Key E A 4 Exec $[fvwm_editor]
+Key F A 4 Exec $[fvwm_filemanager]
 Key Escape A CS Exec $[fvwm_taskmanager]
 
 Key F2 A 1 Exec gmrun
 Key F4 A 1 Close
 
+Key XF86MonBrightnessUp A N Exec /usr/bin/xbacklight +10
+Key XF86MonBrightnessDown A N Exec /usr/bin/xbacklight -10
+Key XF86AudioRaiseVolume A N Exec /usr/bin/pulseaudio-ctl up
+Key XF86AudioLowerVolume A N Exec /usr/bin/pulseaudio-ctl down
+Key XF86AudioMute A N Exec /usr/bin/pulseaudio-ctl mute
+
+# Window Tiling
 Key Left A 4 TileLeft
 Key Right A 4 TileRight
-Key Up A 4 TileTop
-Key Down A 4 TileBottom
+Key Up A 4 AlwaysMaximize
+Key Down A 4 Maximize off
+Key Up A S4 TileTop
+Key Down A C4 TileBottom
+Key Left A S4 TileTopLeft
+Key Right A S4 TileTopRight
+Key Left A C4 TileBottomLeft
+Key Right A C4 TileBottomRight
 
+DestroyFunc AlwaysMaximize
+AddToFunc AlwaysMaximize
++ I ThisWindow (!Shaded, !Iconic) Maximize off
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 100
+
+DestroyFunc TileLeft
 AddToFunc TileLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize off
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileRight
 AddToFunc TileRight
++ I ThisWindow (!Shaded, !Iconic) Maximize off
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
+DestroyFunc TileTop
 AddToFunc TileTop
++ I ThisWindow (!Shaded, !Iconic) Maximize off
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileBottom
 AddToFunc TileBottom
++ I ThisWindow (!Shaded, !Iconic) Maximize off
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+DestroyFunc TileBottomLeft
+AddToFunc TileBottomLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize off
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +50
+
+DestroyFunc TileBottomRight
+AddToFunc TileBottomRight
++ I ThisWindow (!Shaded, !Iconic) Maximize off
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +50 +50
+
+DestroyFunc TileTopLeft
+AddToFunc TileTopLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize off
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+DestroyFunc TileTopRight
+AddToFunc TileTopRight
++ I ThisWindow (!Shaded, !Iconic) Maximize off
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +50 +0

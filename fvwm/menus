@@ -1,7 +1,21 @@
+# Open menu when clicking on desktop
 Mouse 1 R A Menu FvwmRootMenu
 
 DestroyMenu FvwmRootMenu
-AddToMenu FvwmRootMenu "Root Menu" Title
+AddToMenu FvwmRootMenu
++ "Web Browser" Exec $[fvwm_webbrowser]
++ "Terminal Emulator" Exec $[fvwm_term]
++ "File Manager" Exec $[fvwm_filemanager]
++ "" Nop
++ "Change Wallpaper" Exec nitrogen
++ "Sound Settings" Exec pavucontrol
++ "" Nop
 + "FVWM Console" Module FvwmConsole
 + "Restart FVWM" Restart
-+ "Quit FVWM" Quit
+
+DestroyMenu FvwmExitMenu
+AddToMenu FvwmExitMenu "Exit" Title
++ "Log Off" Quit
++ "Restart" Exec systemctl reboot
++ "Suspend" Exec systemctl suspend
++ "Shut Down" Exec systemctl poweroff

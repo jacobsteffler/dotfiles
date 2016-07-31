@@ -14,11 +14,16 @@ DestroyModuleConfig FvwmTaskBar: *
 *FvwmTaskBar: UseSkipList
 *FvwmTaskBar: ShowTips
 *FvwmTaskBar: StartName FVWM
-*FvwmTaskBar: StartMenu FvwmRootMenu
+*FvwmTaskBar: StartCommand (Mouse 1) Popup FvwmRootMenu rectangle $widthx$height+$left+$top 0 -100m
+*FvwmTaskBar: StartCommand (Mouse 3) Popup FvwmExitMenu rectangle $widthx$height+$left+$top 0 -100m
 *FvwmTaskBar: ClockFormat %l:%M:%S %p
 *FvwmTaskBar: UpdateInterval 1
 
 AddToFunc DeiconifyRaiseAndFocus
-+ I Iconify off
-+ I Raise
++ I ThisWindow (Focused) Iconify on
++ I TestRc (NoMatch) Deiconify
+
+AddToFunc Deiconify
++ I Iconify Off
 + I Focus
++ I Raise

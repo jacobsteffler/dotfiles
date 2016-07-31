@@ -1,3 +1,6 @@
+# Autostart programs
+
+DestroyFunc StartFunction
 AddToFunc StartFunction
 # + I Test (Init) Exec compton -bCG &
 + I Module FvwmTaskBar
