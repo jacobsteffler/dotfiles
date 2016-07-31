@@ -1,3 +1,30 @@
 IgnoreModifiers L25
 
+Key W A 4 Exec $[fvwm_webbrowser]
+Key T A 4 Exec $[fvwm_term]
+Key E A 4 Exec $[fvwm_editor]
+Key Escape A CS Exec $[fvwm_taskmanager]
+
 Key F2 A 1 Exec gmrun
+Key F4 A 1 Close
+
+Key Left A 4 TileLeft
+Key Right A 4 TileRight
+Key Up A 4 TileTop
+Key Down A 4 TileBottom
+
+AddToFunc TileLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+AddToFunc TileRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+AddToFunc TileTop
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+AddToFunc TileBottom
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0

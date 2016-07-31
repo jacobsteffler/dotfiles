@@ -1,5 +1,8 @@
 AddToFunc StartFunction
+# + I Test (Init) Exec compton -bCG &
++ I Module FvwmTaskBar
++ I Test (Init) Exec conky &
 + I Test (Init) Exec pcmanfm -d &
 + I Test (Init) Exec nitrogen --restore &
-+ I Test (Init) Exec stalonetray &
+# + I Test (Init) Exec stalonetray &
 + I Test (Init) Exec nm-applet &

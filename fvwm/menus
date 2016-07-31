@@ -1,0 +1,7 @@
+Mouse 1 R A Menu FvwmRootMenu
+
+DestroyMenu FvwmRootMenu
+AddToMenu FvwmRootMenu "Root Menu" Title
++ "FVWM Console" Module FvwmConsole
++ "Restart FVWM" Restart
++ "Quit FVWM" Quit
