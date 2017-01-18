@@ -6,7 +6,7 @@ else
     set guifont=Fira\ Mono\ 12
 endif
 
-set guioptions=rb                   " Hide GUI elements
+set guioptions=c                    " Hide GUI elements
 set guicursor+=a:blinkon0           " Disable cursor blink
 
 colorscheme bensday                 " Set colorscheme
