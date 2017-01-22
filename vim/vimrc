@@ -34,7 +34,6 @@ set tabstop=4 shiftwidth=4                      " Smaller tab stops
 set expandtab softtabstop=-1                    " Spaces for tabs
 set splitbelow splitright                       " Split directions
 set laststatus=2                                " Always show status bar
-set nowrap                                      " Don't wrap lines
 
 " Backspace clears search highlight
 nnoremap <silent> <BS> :nohlsearch<CR><BS>
