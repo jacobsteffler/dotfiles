@@ -2,7 +2,7 @@ URxvt.font: xft:FiraMono:size=12
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 
-! Tango colour theme
+! Tango theme
 URxvt.background: #000000000000
 URxvt.foreground: #BBBBBBBBBBBB
 URxvt.color0: #17171A1A1B1B
