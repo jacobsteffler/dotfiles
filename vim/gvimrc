@@ -9,4 +9,5 @@ endif
 set guioptions=c                    " Hide GUI elements
 set guicursor+=a:blinkon0           " Disable cursor blink
 
-colorscheme bensday                 " Set colorscheme
+colorscheme base16-atelierforest    " Set colorscheme
+set bg=light                        " Use light version
