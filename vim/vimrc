@@ -33,7 +33,8 @@ set tabstop=4 shiftwidth=4                      " Smaller tab stops
 set expandtab softtabstop=-1                    " Spaces for tabs
 set splitbelow splitright                       " Split directions
 set wrap                                        " Soft wrap lines
-set linebreak                                   " Try to split lines at whitespace characters
+set linebreak                                   " Try to split lines at certain characters
+set sidescroll=1                                " Scroll horizontally one character at a time
 let &showbreak='+++ '                           " Line break indicator
 
 set laststatus=2                                " Always show status bar
