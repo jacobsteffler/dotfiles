@@ -32,6 +32,9 @@ set switchbuf=useopen                           " Switch windows if file is alre
 set tabstop=4 shiftwidth=4                      " Smaller tab stops
 set expandtab softtabstop=-1                    " Spaces for tabs
 set splitbelow splitright                       " Split directions
+set wrap                                        " Soft wrap lines
+set linebreak                                   " Try to split lines at whitespace characters
+let &showbreak='+++ '                           " Line break indicator
 
 set laststatus=2                                " Always show status bar
 set statusline=%t\                              " Filename
