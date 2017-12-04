@@ -3,7 +3,7 @@ if has("win32")                     " GUI font
 elseif has("macunix")
     set guifont=Fira\ Mono:h12
 else
-    set guifont=Fira\ Mono\ 12
+    set guifont=Fira\ Code\ 12
 endif
 
 set guioptions=c                    " Hide GUI elements
