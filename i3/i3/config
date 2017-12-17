@@ -5,7 +5,7 @@
 # this file and re-run i3-config-wizard(1).
 
 exec --no-startup-id pcmanfm -d
-exec --no-startup-id ckb --background
+exec --no-startup-id xmodmap -e "keysym Alt_R = Multi_key"
 exec --no-startup-id feh --randomize --recursive --bg-fill ~/Pictures/Wallpapers
 exec --no-startup-id redshift -r
 exec --no-startup-id SpiderOakONE
@@ -39,6 +39,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym Ctrl+Shift+Escape exec i3-sensible-terminal -e "htop"
 
 bindsym $mod+w exec firefox
+bindsym $mod+f exec pcmanfm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -81,7 +82,7 @@ bindsym $mod+g split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -141,8 +142,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+u resize shrink width 10 px or 10 ppt
-bindsym $mod+i resize grow height 10 px or 10 ppt
-bindsym $mod+o resize shrink height 10 px or 10 ppt
+bindsym $mod+i resize shrink height 10 px or 10 ppt
+bindsym $mod+o resize grow height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id ponymix --output increase 5
