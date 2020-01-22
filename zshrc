@@ -16,3 +16,7 @@ setopt COMPLETE_ALIASES
 
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
+
+alias lx='exa -F'
+alias la='exa -F -l -a'
+alias ll='exa -F -l'
