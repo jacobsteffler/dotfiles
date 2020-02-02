@@ -1,4 +1,4 @@
-autoload -Uz compinit promptinit
+autoload -Uz compinit
 compinit
 
 PS1='%B%2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
