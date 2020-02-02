@@ -1,7 +1,7 @@
 autoload -Uz compinit promptinit
 compinit
-promptinit
-prompt redhat
+
+PS1='%B%2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
 
 bindkey -v
 
