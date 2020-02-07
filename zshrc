@@ -30,5 +30,10 @@ then
 	alias gl='git pull'
 	alias gp='git push'
 	alias gst='git status'
-    alias glog='git log --oneline --decorate --graph'
+	alias glog='git log --oneline --decorate --graph'
+fi
+
+if (( $+commands[xdg-open] ));
+then
+	alias xo='xdg-open'
 fi
