@@ -20,20 +20,20 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 if (( $+commands[exa] ));
 then
-	alias ls='exa -F'
-	alias ll='exa -F -l --header'
-	alias la='exa -F -l -a --header'
+    alias ls='exa -F'
+    alias ll='exa -F -l --header'
+    alias la='exa -F -l -a --header'
 fi
 
 if (( $+commands[git] ));
 then
-	alias gl='git pull'
-	alias gp='git push'
-	alias gst='git status'
-	alias glog='git log --oneline --decorate --graph'
+    alias gl='git pull'
+    alias gp='git push'
+    alias gst='git status'
+    alias glog='git log --oneline --decorate --graph'
 fi
 
 if (( $+commands[xdg-open] ));
 then
-	alias xo='xdg-open'
+    alias xo='xdg-open'
 fi
