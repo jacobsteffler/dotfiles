@@ -22,6 +22,7 @@ if (( $+commands[exa] ));
 then
     alias ls='exa -F'
     alias ll='exa -F -l --header'
+    alias lt='exa -F -l --header --tree'
     alias la='exa -F -l -a --header'
 fi
 
