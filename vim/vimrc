@@ -61,3 +61,11 @@ endif
 if has("autocmd")
     filetype plugin indent on
 endif
+
+" Source machine.vim from the same directory as this vimrc
+" If vimrc is a symlink, we won't follow it when looking for machine.vim
+let machine_specific=expand('<sfile>:p:h').'/machine.vim'
+try
+    execute 'source '.fnameescape(machine_specific)
+catch
+endtry
