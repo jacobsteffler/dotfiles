@@ -18,6 +18,8 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' gain-privileges 1
 
+alias se='sudo -e'
+
 if (( $+commands[exa] ));
 then
     alias ls='exa -F'
