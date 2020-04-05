@@ -28,8 +28,9 @@ set hlsearch                                    " Highlight searches
 set ignorecase                                  " Ignore case in search...
 set smartcase                                   "  ...except when search contains a capital
 set switchbuf=useopen                           " Switch windows if file is already open
-set tabstop=4 shiftwidth=4                      " Smaller tab stops
-set expandtab softtabstop=-1                    " Spaces for tabs
+set shiftwidth=4                                " Four-character tabs
+set expandtab                                   " Insert spaces for tabs
+set softtabstop=-1                              " Copy softtabstop from shiftwidth
 set splitbelow splitright                       " Split directions
 set wrap                                        " Soft wrap lines
 set linebreak                                   " Try to split lines at certain characters
