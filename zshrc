@@ -18,7 +18,10 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' gain-privileges 1
 
-alias se='sudo -e'
+if (( $+commands[sudo] ));
+then
+    alias se='sudo -e'
+fi
 
 if (( $+commands[exa] ));
 then
@@ -39,4 +42,9 @@ fi
 if (( $+commands[xdg-open] ));
 then
     alias xo='xdg-open'
+fi
+
+if (( $+commands[wordgrinder] ));
+then
+    alias wg='wordgrinder'
 fi
