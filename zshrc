@@ -1,7 +1,11 @@
 autoload -Uz compinit
 compinit
 
-PS1='%B%2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
+if [[ -v SSH_CONNECTION ]]; then
+    PS1='%B(%m) %2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
+else
+    PS1='%B%2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
+fi
 
 bindkey -v
 
