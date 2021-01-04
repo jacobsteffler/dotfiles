@@ -1,7 +1,8 @@
 autoload -Uz compinit
 compinit
 
-if [[ -v SSH_CONNECTION ]]; then
+if [[ -v SSH_CONNECTION ]];
+then
     PS1='%B(%m) %2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
 else
     PS1='%B%2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
@@ -51,4 +52,11 @@ fi
 if (( $+commands[wordgrinder] ));
 then
     alias wg='wordgrinder'
+fi
+
+if (( $+commands[tmux] )) && \
+    [[ -v SSH_CONNECTION ]] && \
+    [[ ! -v TMUX ]];
+then
+    tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
 fi
