@@ -58,6 +58,7 @@ if (( $+commands[tmux] )) && \
     [[ -v SSH_CONNECTION ]] && \
     [[ ! -v TMUX ]];
 then
+    alias umux='tmux detach -E false'
     tmux attach-session -t ssh_tmux || \
         tmux new-session -s ssh_tmux && \
         exit
