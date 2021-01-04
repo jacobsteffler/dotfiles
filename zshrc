@@ -54,12 +54,14 @@ then
     alias wg='wordgrinder'
 fi
 
-if (( $+commands[tmux] )) && \
-    [[ -v SSH_CONNECTION ]] && \
-    [[ ! -v TMUX ]];
+if (( $+commands[tmux] ));
 then
     alias umux='tmux detach -E false'
-    tmux attach-session -t ssh_tmux || \
-        tmux new-session -s ssh_tmux && \
-        exit
+
+    if [[ -v SSH_CONNECTION ]] && [[ ! -v TMUX ]];
+    then
+        tmux attach-session -t ssh_tmux || \
+            tmux new-session -s ssh_tmux && \
+            exit
+    fi
 fi
