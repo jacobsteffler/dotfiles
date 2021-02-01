@@ -1,6 +1,12 @@
 autoload -Uz compinit
 compinit
 
+case $TERM in
+    xterm*)
+        precmd() { print -Pn "\e]0;Terminal [%~]\a" }
+        ;;
+esac
+
 if [[ -v SSH_CONNECTION ]];
 then
     PS1='%B(%m) %2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
