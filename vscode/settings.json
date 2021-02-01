@@ -2,6 +2,5 @@
     "files.hotExit": "off",
     "window.restoreWindows": "none",
     "workbench.startupEditor": "newUntitledFile",
-    "editor.lineNumbers": "relative",
-    "workbench.colorTheme": "Quiet Light"
+    "workbench.list.openMode": "doubleClick",
 }
