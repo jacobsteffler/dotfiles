@@ -22,6 +22,8 @@ set splitbelow splitright                       " Split directions
 set wrap                                        " Soft wrap lines
 set linebreak                                   " Try to split lines at certain characters
 set sidescroll=1                                " Scroll horizontally one character at a time
+set title                                       " Control terminal title when supported
+set titleold=                                   " If can't restore the old title, just make it empty
 let &showbreak='+++ '                           " Line break indicator
 
 set laststatus=2                                " Always show status bar
