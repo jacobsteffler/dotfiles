@@ -1,0 +1,10 @@
+return {
+-- Table: {1}
+{
+   ["thunar"]="#f6f5f4",
+   ["gl"]="#31312d",
+   ["kitty"]="#000000",
+   ["code"]="#f6f5f4",
+   ["Navigator"]="#f6f5f4",
+},
+}
