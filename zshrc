@@ -1,15 +1,17 @@
 autoload -Uz compinit
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-
-compinit
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+autoload -Uz edit-command-line
 
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+zle -N edit-command-line
 
 bindkey -v
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
+bindkey "^xe" edit-command-line
+bindkey "^x^e" edit-command-line
 
 HISTFILE=~/.zshhist
 HISTSIZE=1000
@@ -19,6 +21,8 @@ setopt AUTO_CD
 setopt EXTENDED_GLOB
 setopt NOTIFY
 setopt COMPLETE_ALIASES
+
+compinit
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
@@ -35,11 +39,6 @@ then
     PS1='%B(%m) %2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
 else
     PS1='%B%2~ %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
-fi
-
-if (( $+commands[sudo] ));
-then
-    alias se='sudo -e'
 fi
 
 if (( $+commands[exa] ));
@@ -61,16 +60,6 @@ fi
 if (( $+commands[xdg-open] ));
 then
     alias xo='xdg-open'
-fi
-
-if (( $+commands[wordgrinder] ));
-then
-    alias wg='wordgrinder'
-fi
-
-if (( $+commands[xcalib] ));
-then
-    alias inv='xcalib -i -a'
 fi
 
 if (( $+commands[tmux] ));
