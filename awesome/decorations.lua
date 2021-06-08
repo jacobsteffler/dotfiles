@@ -3,6 +3,9 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
+-- TODO debugging
+local naughty = require("naughty")
+
 local drawing = require("util.drawing")
 
 local M = {}
@@ -24,7 +27,7 @@ local update_max_screen_dims
 local theme
 
 -- TODO
-local hack_empty_widget = {
+local hack_empty_widget = wibox.widget {
     widget = wibox.widget.textbox
 }
 
@@ -122,7 +125,7 @@ make_one_button = function(args)
 
     local widget = wibox.widget {
         widget = wibox.widget.imagebox,
-        resize = false,
+        resize = false
     }
 
     local function update_surf(state)
@@ -193,7 +196,12 @@ make_left_buttons = function(c, radius)
         callback = close_cb
     }
 
-    return close
+    return wibox.widget {
+        layout = wibox.layout.flex.horizontal,
+        spacing = 10,
+
+        close
+    }
 end
 
 add_top_bar = function(c)
@@ -284,7 +292,7 @@ get_top_background_widget = function(args)
     local inner_color = args.inner_color
     local base_color = args.base_color
 
-    return {
+    return wibox.widget {
         layout = wibox.layout.fixed.vertical,
         fill_space = true,
 
