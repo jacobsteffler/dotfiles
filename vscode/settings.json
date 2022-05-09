@@ -1,0 +1,6 @@
+{
+    "files.hotExit": "off",
+    "window.restoreWindows": "none",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.list.openMode": "doubleClick",
+}
