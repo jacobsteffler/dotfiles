@@ -5,13 +5,17 @@ autoload -Uz edit-command-line
 
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-zle -N edit-command-line
 
 bindkey -v
-bindkey "^[[A" up-line-or-beginning-search
-bindkey "^[[B" down-line-or-beginning-search
-bindkey "^xe" edit-command-line
-bindkey "^x^e" edit-command-line
+bindkey "^[[A" up-line-or-beginning-search      # up
+bindkey "^[[B" down-line-or-beginning-search    # down
+bindkey "^[[1;5D" backward-word                 # ctrl-left
+bindkey "^[[1;5C" forward-word                  # ctrl-right
+bindkey "^[[3;5~" kill-word                     # ctrl-delete
+bindkey "^H" backward-kill-word                 # ctrl-backspace
+bindkey "^[[3~" delete-char                     # delete
+bindkey "^[[H" beginning-of-line                # home
+bindkey "^[[F" end-of-line                      # end
 
 HISTFILE=~/.zshhist
 HISTSIZE=1000
