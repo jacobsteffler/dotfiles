@@ -102,8 +102,3 @@ then
     # shell without closing the session
     alias umux='tmux detach -E false'
 fi
-
-if [[ $TERM == 'xterm-kitty' ]];
-then
-    alias icat='kitty +kitten icat'
-fi
