@@ -65,10 +65,8 @@ fi
 
 if (( $+commands[git] ));
 then
-    alias gl='git pull'
-    alias gp='git push'
-    alias gc='git commit'
     alias gst='git status'
+    alias gf='git fetch -v'
     alias glog='git log --oneline --decorate --graph'
 fi
 
