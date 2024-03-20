@@ -55,12 +55,12 @@ then
     eval $(keychain --eval --noask --quiet --timeout 180)
 fi
 
-if (( $+commands[exa] ));
+if (( $+commands[eza] ));
 then
-    alias ls='exa -F'
-    alias ll='exa -F -l --header --group'
-    alias lt='exa -F -l --header --tree --group'
-    alias la='exa -F -l -a --header --group'
+    alias ls='eza -F'
+    alias ll='eza -F -l --header --group'
+    alias lt='eza -F -l --header --tree --group'
+    alias la='eza -F -l -a --header --group'
 fi
 
 if (( $+commands[git] ));
