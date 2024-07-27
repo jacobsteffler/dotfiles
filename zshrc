@@ -55,6 +55,11 @@ then
     eval $(keychain --eval --noask --quiet --timeout 180)
 fi
 
+if (( $+commands[nvim] ));
+then
+	alias vim='nvim'
+fi
+
 if (( $+commands[eza] ));
 then
     alias ls='eza -F'
