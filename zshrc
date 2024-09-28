@@ -58,6 +58,7 @@ fi
 if (( $+commands[nvim] ));
 then
 	alias vim='nvim'
+	alias vimdiff='nvim -d'
 fi
 
 if (( $+commands[eza] ));
