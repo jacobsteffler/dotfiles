@@ -55,6 +55,12 @@ then
     eval $(keychain --eval --noask --quiet --timeout 180)
 fi
 
+if (( $+commands[sudo] ));
+then
+	# Hack to allow sudo to access our aliases
+	alias sudo='sudo '
+fi
+
 if (( $+commands[nvim] ));
 then
 	alias vim='nvim'
