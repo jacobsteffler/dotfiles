@@ -25,6 +25,7 @@ setopt AUTO_CD
 setopt EXTENDED_GLOB
 setopt NOTIFY
 setopt COMPLETE_ALIASES
+setopt CORRECT
 
 compinit
 
