@@ -20,4 +20,5 @@ set statusline+=%c%V,                           " Cursor column
 set statusline+=%l/%L                           " Cursor line/total lines
 set statusline+=\ %P                            " Percent through file
 
+inoremap ;; <Esc>
 nnoremap <silent> <BS> :nohlsearch<CR><BS>
