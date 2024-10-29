@@ -9,6 +9,8 @@ set splitbelow splitright
 
 set title
 
+colors catppuccin-frappe
+
 autocmd FileType gitcommit setlocal spell
 
 inoremap ;; <Esc>
