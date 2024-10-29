@@ -32,6 +32,20 @@ now(function()
 	})
 end)
 
+now(function()
+	add({ source = 'williamboman/mason.nvim' })
+	add({ source = 'williamboman/mason-lspconfig.nvim' })
+	add({ source = 'neovim/nvim-lspconfig' })
+
+	require('mason').setup()
+	require('mason-lspconfig').setup()
+	require('mason-lspconfig').setup_handlers({
+		function(server_name)
+			require('lspconfig')[server_name].setup({})
+		end,
+	})
+end)
+
 -- Execute sometime after initialization
 later(function() require('mini.trailspace').setup() end)
 later(function() require('mini.jump2d').setup() end)
