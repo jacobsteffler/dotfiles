@@ -9,7 +9,7 @@ set splitbelow splitright
 
 set title
 
-colors catppuccin-frappe
+colors catppuccin
 
 autocmd FileType gitcommit setlocal spell
 
