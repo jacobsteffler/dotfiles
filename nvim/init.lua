@@ -21,6 +21,9 @@ now(function() add({ source = 'catppuccin/nvim', name = 'catppuccin' }) end)
 
 -- Execute sometime after initialization
 later(function() require('mini.trailspace').setup() end)
+later(function() require('mini.jump2d').setup() end)
+later(function() require('mini.move').setup() end)
+later(function() require('mini.pairs').setup() end)
 
 later(function()
 	add({ source = 'NeogitOrg/neogit', depends = {
