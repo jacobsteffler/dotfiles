@@ -27,6 +27,26 @@ later(function() require('mini.move').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.indentscope').setup() end)
 
+later(function()
+	add({
+		source = 'nvim-treesitter/nvim-treesitter',
+		hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+	})
+
+	require('nvim-treesitter.configs').setup({
+		highlight = { enable = true },
+		indent = { enable = true },
+		ensure_installed = {
+			'lua',
+			'bash',
+			'c',
+			'cpp',
+			'rust',
+			'python',
+		},
+	})
+end)
+
 -- Load vimrc configuration
 local vimrc = vim.fn.stdpath('config') .. '/vimrc.vim'
 vim.cmd.source(vimrc)
