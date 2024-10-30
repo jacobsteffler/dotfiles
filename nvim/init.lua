@@ -27,16 +27,6 @@ later(function() require('mini.move').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.indentscope').setup() end)
 
-later(function()
-	add({ source = 'NeogitOrg/neogit', depends = {
-		{ source = 'nvim-lua/plenary.nvim' },
-		{ source = 'sindrets/diffview.nvim' },
-		{ source = 'nvim-telescope/telescope.nvim' },
-	} })
-
-	require('neogit').setup()
-end)
-
 -- Load vimrc configuration
 local vimrc = vim.fn.stdpath('config') .. '/vimrc.vim'
 vim.cmd.source(vimrc)
