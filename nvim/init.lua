@@ -16,6 +16,7 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 -- Execute immediately, before initial render
 now(function() require('mini.starter').setup() end)
+now(function() require('mini.icons').setup() end)
 now(function() require('mini.statusline').setup() end)
 now(function() add({ source = 'catppuccin/nvim', name = 'catppuccin' }) end)
 
