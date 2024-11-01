@@ -16,6 +16,7 @@ bindkey "^H" backward-kill-word                 # ctrl-backspace
 bindkey "^[[3~" delete-char                     # delete
 bindkey "^[[H" beginning-of-line                # home
 bindkey "^[[F" end-of-line                      # end
+bindkey -v "^?" backward-delete-char		# backspace in vi mode
 
 HISTFILE=~/.zshhist
 HISTSIZE=1000
