@@ -74,6 +74,7 @@ later(function()
 end)
 
 vim.o.title = true
+vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true
 
