@@ -88,6 +88,13 @@ vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
+if vim.g.neovide then
+    vim.g.neovide_scroll_animation_length = 0.2
+    vim.g.neovide_cursor_animate_command_line = false
+    vim.g.neovide_cursor_animation_length = 0.03
+    vim.g.neovide_cursor_trail_size = 0.3
+end
+
 -- Load vimrc configuration
 local vimrc = vim.fn.stdpath('config') .. '/vimrc.vim'
 vim.cmd.source(vimrc)
