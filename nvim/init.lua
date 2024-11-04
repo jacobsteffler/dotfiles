@@ -73,6 +73,21 @@ later(function()
     })
 end)
 
+vim.o.title = true
+vim.o.number = true
+vim.o.relativenumber = true
+
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.wildignorecase = true
+
+vim.o.splitbelow = true
+vim.o.splitright = true
+
+vim.o.expandtab = true
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+
 -- Load vimrc configuration
 local vimrc = vim.fn.stdpath('config') .. '/vimrc.vim'
 vim.cmd.source(vimrc)
