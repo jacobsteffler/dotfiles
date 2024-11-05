@@ -59,14 +59,14 @@ fi
 
 if (( $+commands[sudo] ));
 then
-	# Hack to allow sudo to access our aliases
-	alias sudo='sudo '
+    # Hack to allow sudo to access our aliases
+    alias sudo='sudo '
 fi
 
 if (( $+commands[nvim] ));
 then
-	alias vim='nvim'
-	alias vimdiff='nvim -d'
+    alias vim='nvim'
+    alias vimdiff='nvim -d'
 fi
 
 if (( $+commands[eza] ));
