@@ -33,8 +33,8 @@ now(function()
 end)
 
 now(function()
-    add({ source = 'williamboman/mason.nvim' })
-    add({ source = 'williamboman/mason-lspconfig.nvim' })
+    add({ source = 'williamboman/mason.nvim', name = 'mason' })
+    add({ source = 'williamboman/mason-lspconfig.nvim', name = 'mason-lspconfig' })
     add({ source = 'neovim/nvim-lspconfig' })
 
     require('mason').setup()
