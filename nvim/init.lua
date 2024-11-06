@@ -30,6 +30,8 @@ now(function()
             }
         end,
     })
+
+    vim.cmd('colorscheme catppuccin')
 end)
 
 now(function()
@@ -117,6 +119,12 @@ vim.keymap.set('c', ';;', '<C-c>')  -- To exit command mode, uses C-c to avoid e
 vim.keymap.set({'o', 'v'}, ';', '<Esc>')    -- To exit operator or visual mode
 vim.keymap.set('n', '<BS>', '<Cmd>nohlsearch<CR><BS>')  -- Clear search highlight, <Cmd> obviates the need for nore and silent
 
--- Load vimrc configuration
-local vimrc = vim.fn.stdpath('config') .. '/vimrc.vim'
-vim.cmd.source(vimrc)
+vim.api.nvim_create_autocmd(
+    'FileType',
+    {
+        pattern = 'gitcommit',
+        callback = function()
+            vim.wo.spell = true
+        end,
+    }
+)
