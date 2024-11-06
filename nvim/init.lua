@@ -86,6 +86,7 @@ later(function()
             'tsx',
             'typescript',
             'vim',
+            'vimdoc',
         },
     })
 end)
