@@ -112,6 +112,11 @@ if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0
 end
 
+vim.keymap.set('i', ';;', '<Esc>')  -- To exit insert mode
+vim.keymap.set('c', ';;', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
+vim.keymap.set({'o', 'v'}, ';', '<Esc>')    -- To exit operator or visual mode
+vim.keymap.set('n', '<BS>', '<Cmd>nohlsearch<CR><BS>')  -- Clear search highlight, <Cmd> obviates the need for nore and silent
+
 -- Load vimrc configuration
 local vimrc = vim.fn.stdpath('config') .. '/vimrc.vim'
 vim.cmd.source(vimrc)
