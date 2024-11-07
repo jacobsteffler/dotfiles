@@ -65,8 +65,14 @@ fi
 
 if (( $+commands[nvim] ));
 then
+    alias v='nvim'
     alias vim='nvim'
     alias vimdiff='nvim -d'
+fi
+
+if (( $+commands[neovide] ));
+then
+    alias nv='neovide'
 fi
 
 if (( $+commands[eza] ));
