@@ -54,6 +54,7 @@ later(function() require('mini.jump2d').setup() end)
 later(function() require('mini.move').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.indentscope').setup() end)
+later(function() require('mini.comment').setup() end)
 
 later(function()
     add({
