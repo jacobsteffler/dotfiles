@@ -114,6 +114,8 @@ if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0
 end
 
+vim.g.mapleader = ','
+vim.keymap.set('n', '<Leader>w', '<Cmd>set wrap!<CR>')  -- To toggle word wrap
 vim.keymap.set('i', ';;', '<Esc>')  -- To exit insert mode
 vim.keymap.set('c', ';;', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
 vim.keymap.set({'o', 'v'}, ';', '<Esc>')    -- To exit operator or visual mode
