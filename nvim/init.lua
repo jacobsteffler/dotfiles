@@ -56,6 +56,20 @@ later(function() require('mini.pairs').setup() end)
 later(function() require('mini.indentscope').setup() end)
 later(function() require('mini.comment').setup() end)
 
+if not vim.g.neovide then
+    later(function()
+        -- Add some animations for the terminal.
+        -- IMPORTANT: Make sure mousescroll has ver:1
+        require('mini.animate').setup({
+            cursor = { enable = false },
+            scroll = { enable = true },
+            resize = { enable = true },
+            open = { enable = true },
+            close = { enable = true },
+        })
+    end)
+end
+
 later(function()
     add({
         source = 'nvim-treesitter/nvim-treesitter',
@@ -112,6 +126,8 @@ vim.o.splitright = true
 vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
+
+vim.opt.mousescroll = { 'ver:1', 'hor:6' }
 
 if vim.g.neovide then
     vim.g.neovide_scroll_animation_length = 0.2
