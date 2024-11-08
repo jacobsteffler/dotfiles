@@ -55,6 +55,8 @@ later(function() require('mini.move').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.indentscope').setup() end)
 later(function() require('mini.comment').setup() end)
+later(function() require('mini.files').setup() end)
+later(function() require('mini.pick').setup() end)
 
 if not vim.g.neovide then
     later(function()
@@ -135,6 +137,9 @@ if vim.g.neovide then
 end
 
 vim.g.mapleader = ','
+vim.keymap.set('n', '<Leader>ff', function() MiniPick.builtin.files() end)
+vim.keymap.set('n', '<Leader>fs', function() MiniPick.builtin.grep_live() end)
+vim.keymap.set('n', '<Leader>fb', function() MiniFiles.open() end)
 vim.keymap.set('n', '<Leader>w', '<Cmd>set wrap!<CR>')  -- To toggle word wrap
 vim.keymap.set('i', ';;', '<Esc>')  -- To exit insert mode
 vim.keymap.set('c', ';;', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
