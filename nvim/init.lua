@@ -99,6 +99,9 @@ vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true
 
+vim.o.linebreak = true
+vim.o.showbreak = '+++ '
+
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wildignorecase = true
