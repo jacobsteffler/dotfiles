@@ -50,27 +50,10 @@ end)
 
 -- Execute sometime after initialization
 later(function() require('mini.trailspace').setup() end)
-later(function() require('mini.jump2d').setup() end)
 later(function() require('mini.move').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.indentscope').setup() end)
 later(function() require('mini.comment').setup() end)
-later(function() require('mini.files').setup() end)
-later(function() require('mini.pick').setup() end)
-
-if not vim.g.neovide then
-    later(function()
-        -- Add some animations for the terminal.
-        -- IMPORTANT: Make sure mousescroll has ver:1
-        require('mini.animate').setup({
-            cursor = { enable = false },
-            scroll = { enable = true },
-            resize = { enable = true },
-            open = { enable = true },
-            close = { enable = true },
-        })
-    end)
-end
 
 later(function()
     add({
@@ -129,17 +112,12 @@ vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
-vim.opt.mousescroll = { 'ver:1', 'hor:6' }
-
 if vim.g.neovide then
     vim.g.neovide_scroll_animation_length = 0.2
     vim.g.neovide_cursor_animation_length = 0
 end
 
 vim.g.mapleader = ','
-vim.keymap.set('n', '<Leader>ff', function() MiniPick.builtin.files() end)
-vim.keymap.set('n', '<Leader>fs', function() MiniPick.builtin.grep_live() end)
-vim.keymap.set('n', '<Leader>fb', function() MiniFiles.open() end)
 vim.keymap.set('n', '<Leader>w', '<Cmd>set wrap!<CR>')  -- To toggle word wrap
 vim.keymap.set('i', ';;', '<Esc>')  -- To exit insert mode
 vim.keymap.set('c', ';;', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
