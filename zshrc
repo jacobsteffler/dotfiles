@@ -2,9 +2,12 @@ autoload -Uz compinit
 autoload -Uz up-line-or-beginning-search
 autoload -Uz down-line-or-beginning-search
 autoload -Uz edit-command-line
+autoload -Uz select-word-style
 
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+
+select-word-style bash
 
 bindkey -v
 bindkey "^[[A" up-line-or-beginning-search      # up
