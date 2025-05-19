@@ -108,8 +108,8 @@ fi
 if (( $+commands[tmux] ));
 then
 
-    # If we're in a zsh session, but not in tmux
-    if [[ -f ~/.zshtmux  ]] && [[ ! -v TMUX ]];
+    # If we're in an ssh session, but not in tmux
+    if [[ -v SSH_CONNECTION  ]] && [[ ! -v TMUX ]];
     then
 
         # Connect to or create the "zsh_tmux"
