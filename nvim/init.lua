@@ -34,20 +34,6 @@ now(function()
     vim.cmd('colorscheme catppuccin')
 end)
 
-now(function()
-    add({ source = 'williamboman/mason.nvim', name = 'mason' })
-    add({ source = 'williamboman/mason-lspconfig.nvim', name = 'mason-lspconfig' })
-    add({ source = 'neovim/nvim-lspconfig' })
-
-    require('mason').setup()
-    require('mason-lspconfig').setup()
-    require('mason-lspconfig').setup_handlers({
-        function(server_name)
-            require('lspconfig')[server_name].setup({})
-        end,
-    })
-end)
-
 -- Execute sometime after initialization
 later(function() require('mini.trailspace').setup() end)
 later(function() require('mini.move').setup() end)
