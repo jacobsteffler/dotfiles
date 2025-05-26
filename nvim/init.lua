@@ -105,9 +105,9 @@ end
 
 vim.g.mapleader = ','
 vim.keymap.set('n', '<Leader>w', '<Cmd>set wrap!<CR>')  -- To toggle word wrap
-vim.keymap.set('i', ';;', '<Esc>')  -- To exit insert mode
-vim.keymap.set('c', ';;', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
-vim.keymap.set({'o', 'v'}, ';', '<Esc>')    -- To exit operator or visual mode
+vim.keymap.set('i', ',,', '<Esc>')  -- To exit insert mode
+vim.keymap.set('c', ',,', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
+vim.keymap.set({'o', 'v'}, ',', '<Esc>')    -- To exit operator or visual mode
 vim.keymap.set('n', '<BS>', '<Cmd>nohlsearch<CR><BS>')  -- Clear search highlight, <Cmd> obviates the need for nore and silent
 
 vim.api.nvim_create_autocmd(
