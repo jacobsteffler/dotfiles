@@ -84,6 +84,7 @@ vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true
 
+vim.o.fixeol = false
 vim.o.linebreak = true
 vim.o.showbreak = '+++ '
 
