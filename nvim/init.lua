@@ -15,7 +15,6 @@ require('mini.deps').setup({ path = { package = path_package } })
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 -- Execute immediately, before initial render
-now(function() require('mini.starter').setup() end)
 now(function() require('mini.icons').setup() end)
 now(function() require('mini.statusline').setup() end)
 now(function()
@@ -66,6 +65,7 @@ later(function()
             'javascript',
             'json',
             'lua',
+            'nix',
             'python',
             'rust',
             'scss',
