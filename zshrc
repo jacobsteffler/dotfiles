@@ -37,22 +37,11 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' gain-privileges 1
 
-case $TERM in
-    xterm*)
-        precmd() { print -Pn "\e]0;Terminal [%~]\a" }
-        ;;
-esac
-
 if [[ -v SSH_CONNECTION ]];
 then
     PS1='%B(%m) %40>...>%2~%>> %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
 else
     PS1='%B%40>...>%2~%>> %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
-fi
-
-if [[ -f ~/.zshpath ]];
-then
-    source ~/.zshpath
 fi
 
 if (( $+commands[keychain] ));
@@ -68,14 +57,8 @@ fi
 
 if (( $+commands[nvim] ));
 then
-    alias v='nvim'
     alias vim='nvim'
     alias vimdiff='nvim -d'
-fi
-
-if (( $+commands[neovide] ));
-then
-    alias nv='neovide'
 fi
 
 if (( $+commands[eza] ));
@@ -93,11 +76,6 @@ then
     alias gst='git status'
     alias gf='git fetch -v'
     alias glog='git log --oneline --decorate --graph'
-fi
-
-if (( $+commands[xdg-open] ));
-then
-    alias xo='xdg-open'
 fi
 
 if (( $+commands[bat] ));
