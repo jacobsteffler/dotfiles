@@ -20,6 +20,7 @@ bindkey "^[[3~" delete-char                     # delete
 bindkey "^[[H" beginning-of-line                # home
 bindkey "^[[F" end-of-line                      # end
 bindkey -v "^?" backward-delete-char		# backspace in vi mode
+bindkey '^[[Z' reverse-menu-complete
 
 HISTFILE=~/.zshhist
 HISTSIZE=1000
