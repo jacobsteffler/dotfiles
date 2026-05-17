@@ -23,19 +23,8 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 now(function() require('mini.icons').setup() end)
 now(function() require('mini.statusline').setup() end)
 now(function()
-    add({ source = 'catppuccin/nvim', name = 'catppuccin' })
-    require('catppuccin').setup({
-        custom_highlights = function(colors)
-            return {
-                LineNr = {
-                    -- Default text color is a bit hard to read
-                    fg = colors.overlay2,
-                },
-            }
-        end,
-    })
-
-    vim.cmd('colorscheme catppuccin')
+    add({ source = 'dracula/vim', name = 'dracula' })
+    vim.cmd('colorscheme dracula')
 end)
 
 -- Execute sometime after initialization
