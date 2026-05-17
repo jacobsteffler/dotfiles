@@ -32,7 +32,7 @@ setopt NOTIFY
 setopt COMPLETE_ALIASES
 setopt CORRECT
 
-compinit
+compinit -C
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
