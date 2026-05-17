@@ -34,45 +34,6 @@ later(function() require('mini.pairs').setup() end)
 later(function() require('mini.indentscope').setup() end)
 later(function() require('mini.comment').setup() end)
 
-later(function()
-    add({
-        source = 'nvim-treesitter/nvim-treesitter',
-        hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
-    })
-
-    require('nvim-treesitter.configs').setup({
-        highlight = { enable = true },
-        indent = { enable = true },
-        ensure_installed = {
-            'bash',
-            'c',
-            'c_sharp',
-            'cpp',
-            'css',
-            'csv',
-            'git_config',
-            'git_rebase',
-            'gitattributes',
-            'gitcommit',
-            'gitignore',
-            'html',
-            'javascript',
-            'json',
-            'lua',
-            'nix',
-            'python',
-            'rust',
-            'scss',
-            'ssh_config',
-            'toml',
-            'tsx',
-            'typescript',
-            'vim',
-            'vimdoc',
-        },
-    })
-end)
-
 vim.o.title = true
 vim.o.cursorline = true
 vim.o.number = true
