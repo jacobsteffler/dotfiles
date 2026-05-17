@@ -45,15 +45,18 @@ else
     PS1='%B%40>...>%2~%>> %(?.%F{green}.%F{red})%(!.#.$)>%f%b '
 fi
 
+alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
+alias gf='git fetch -v'
+alias glog='git log --oneline --decorate --graph'
+
+# Hack to allow sudo to access our aliases
+alias sudo='sudo '
+
 if (( $+commands[keychain] ));
 then
     eval $(keychain --eval --noask --quiet --timeout 180)
-fi
-
-if (( $+commands[sudo] ));
-then
-    # Hack to allow sudo to access our aliases
-    alias sudo='sudo '
 fi
 
 if (( $+commands[nvim] ));
@@ -68,15 +71,6 @@ then
     alias ll='eza -F -l --header --group'
     alias lt='eza -F -l --header --tree --group'
     alias la='eza -F -l -a --header --group'
-fi
-
-if (( $+commands[git] ));
-then
-    alias gl='git pull'
-    alias gp='git push'
-    alias gst='git status'
-    alias gf='git fetch -v'
-    alias glog='git log --oneline --decorate --graph'
 fi
 
 if (( $+commands[bat] ));
