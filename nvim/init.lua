@@ -1,38 +1,17 @@
--- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
-local path_package = vim.fn.stdpath('data') .. '/site'
-local mini_path = path_package .. '/pack/deps/start/mini.nvim'
-if not vim.loop.fs_stat(mini_path) then
-    vim.cmd('echo "Installing `mini.nvim`" | redraw')
-    local clone_cmd = {
-        'git', 'clone', '--filter=blob:none',
-        -- Uncomment next line to use 'stable' branch
-        -- '--branch', 'stable',
-        'https://github.com/nvim-mini/mini.nvim', mini_path
-    }
-    vim.fn.system(clone_cmd)
-    vim.cmd('packadd mini.nvim | helptags ALL')
-    vim.cmd('echo "Installed `mini.nvim`" | redraw')
-end
+vim.pack.add({
+    'https://github.com/nvim-mini/mini.nvim',
+    { src = 'https://github.com/dracula/vim', name = 'dracula' },
+})
 
--- Set up 'mini.deps'
-require('mini.deps').setup({ path = { package = path_package } })
+require('mini.icons').setup()
+require('mini.statusline').setup()
+require('mini.trailspace').setup()
+require('mini.move').setup()
+require('mini.pairs').setup()
+require('mini.indentscope').setup()
+require('mini.comment').setup()
 
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-
--- Execute immediately, before initial render
-now(function() require('mini.icons').setup() end)
-now(function() require('mini.statusline').setup() end)
-now(function()
-    add({ source = 'dracula/vim', name = 'dracula' })
-    vim.cmd('colorscheme dracula')
-end)
-
--- Execute sometime after initialization
-later(function() require('mini.trailspace').setup() end)
-later(function() require('mini.move').setup() end)
-later(function() require('mini.pairs').setup() end)
-later(function() require('mini.indentscope').setup() end)
-later(function() require('mini.comment').setup() end)
+vim.cmd('colorscheme dracula')
 
 vim.o.title = true
 vim.o.cursorline = true
