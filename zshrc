@@ -51,6 +51,9 @@ alias gst='git status'
 alias gf='git fetch -v'
 alias glog='git log --oneline --decorate --graph'
 
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
+
 # Hack to allow sudo to access our aliases
 alias sudo='sudo '
 
