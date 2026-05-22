@@ -1,5 +1,7 @@
 vim.pack.add({
     'https://github.com/nvim-mini/mini.nvim',
+    'https://github.com/nvim-telescope/telescope.nvim',
+    'https://github.com/nvim-lua/plenary.nvim', -- Dep for telescope
     { src = 'https://github.com/dracula/vim', name = 'dracula' },
 })
 
@@ -24,6 +26,13 @@ hipatterns.setup({
         -- Highlight hex color strings (`#rrggbb`) using that color
         hex_color = hipatterns.gen_highlighter.hex_color(),
     },
+})
+
+require('telescope').setup({
+    defaults = {
+        file_sorter = require('mini.fuzzy').get_telescope_sorter,
+        generic_sorter = require('mini.fuzzy').get_telescope_sorter,
+    }
 })
 
 vim.cmd('colorscheme dracula')
