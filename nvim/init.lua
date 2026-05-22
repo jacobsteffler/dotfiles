@@ -42,7 +42,6 @@ vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true
 
-vim.o.list = true
 vim.o.fixeol = false
 vim.o.linebreak = true
 vim.o.showbreak = '+++ '
@@ -58,10 +57,13 @@ vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
+vim.o.wrap = false
+vim.o.list = true
+
 vim.g.mapleader = ','
 vim.keymap.set('n', '<Leader>w', '<Cmd>set wrap!<CR>')  -- To toggle word wrap
-vim.keymap.set({'i', 'o', 'v'}, ',,', '<Esc>')  -- To exit insert, operation, or visual mode
-vim.keymap.set('c', ',,', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
+vim.keymap.set({'i', 'o', 'v'}, '<Leader><Leader>', '<Esc>')  -- To exit insert, operator, or visual mode
+vim.keymap.set('c', '<Leader><Leader>', '<C-c>')  -- To exit command mode, uses C-c to avoid executing the command
 vim.keymap.set('n', '<BS>', '<Cmd>nohlsearch<CR><BS>')  -- Clear search highlight, <Cmd> obviates the need for nore and silent
 
 vim.api.nvim_create_autocmd(
