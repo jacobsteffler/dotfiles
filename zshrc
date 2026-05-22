@@ -54,11 +54,6 @@ alias glog='git log --oneline --decorate --graph'
 # Hack to allow sudo to access our aliases
 alias sudo='sudo '
 
-if (( $+commands[keychain] ));
-then
-    eval $(keychain --eval --noask --quiet --timeout 180)
-fi
-
 if (( $+commands[nvim] ));
 then
     alias vim='nvim'
