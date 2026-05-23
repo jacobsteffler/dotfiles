@@ -15,14 +15,18 @@ require('mini.pick').setup({
     options = { use_cache = true }, -- Faster but more memory usage
 })
 
+local extra = require('mini.extra')
+extra.setup()
+
+local hi_words = extra.gen_highlighter.words
 local hipatterns = require('mini.hipatterns')
 hipatterns.setup({
     highlighters = {
         -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
-        fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-        hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
-        todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
-        note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+        fixme = hi_words({ 'FIXME', 'FixMe', 'Fixme', 'fixme' }, 'MiniHipatternsFixme'),
+        hack  = hi_words({ 'HACK', 'Hack', 'hack' }, 'MiniHipatternsHack'),
+        todo  = hi_words({ 'TODO', 'Todo', 'todo' }, 'MiniHipatternsTodo'),
+        note  = hi_words({ 'NOTE', 'Note', 'note' },  'MiniHipatternsNote'),
 
         -- Highlight hex color strings (`#rrggbb`) using that color
         hex_color = hipatterns.gen_highlighter.hex_color(),
