@@ -1,7 +1,5 @@
 vim.pack.add({
     'https://github.com/nvim-mini/mini.nvim',
-    'https://github.com/nvim-telescope/telescope.nvim',
-    'https://github.com/nvim-lua/plenary.nvim', -- Dep for telescope
     { src = 'https://github.com/dracula/vim', name = 'dracula' },
 })
 
@@ -13,6 +11,9 @@ require('mini.pairs').setup()
 require('mini.indentscope').setup()
 require('mini.comment').setup()
 require('mini.diff').setup()
+require('mini.pick').setup({
+    options = { use_cache = true }, -- Faster but more memory usage
+})
 
 local hipatterns = require('mini.hipatterns')
 hipatterns.setup({
@@ -26,13 +27,6 @@ hipatterns.setup({
         -- Highlight hex color strings (`#rrggbb`) using that color
         hex_color = hipatterns.gen_highlighter.hex_color(),
     },
-})
-
-require('telescope').setup({
-    defaults = {
-        file_sorter = require('mini.fuzzy').get_telescope_sorter,
-        generic_sorter = require('mini.fuzzy').get_telescope_sorter,
-    }
 })
 
 vim.cmd('colorscheme dracula')
@@ -59,6 +53,7 @@ vim.o.shiftwidth = 4
 
 vim.o.wrap = false
 vim.o.list = true
+vim.o.winborder = 'rounded'
 
 vim.g.mapleader = ','
 vim.keymap.set('n', '<Leader>w', '<Cmd>set wrap!<CR>')  -- To toggle word wrap
