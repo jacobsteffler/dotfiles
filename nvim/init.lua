@@ -12,6 +12,7 @@ require('mini.indentscope').setup()
 require('mini.comment').setup()
 require('mini.diff').setup()
 require('mini.splitjoin').setup()
+require('mini.completion').setup()
 require('mini.pick').setup({
     options = { use_cache = true }, -- Faster but more memory usage
 })
