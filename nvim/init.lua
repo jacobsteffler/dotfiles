@@ -74,3 +74,12 @@ vim.api.nvim_create_autocmd(
         end,
     }
 )
+
+-- LSP
+vim.lsp.config['rust-analyzer'] = {
+    cmd = { 'rust-analyzer' },
+    filetypes = { 'rust' },
+    root_markers = { 'Cargo.toml', '.git' },
+}
+
+vim.lsp.enable('rust-analyzer')
