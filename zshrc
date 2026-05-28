@@ -25,14 +25,18 @@ bindkey '^[[Z' reverse-menu-complete            # shift-tab for completions
 bindkey '^G' edit-command-line                  # open command in $EDITOR
 
 HISTFILE=~/.zshhist
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=50000
+SAVEHIST=50000
 
 setopt AUTO_CD
 setopt EXTENDED_GLOB
 setopt NOTIFY
 setopt COMPLETE_ALIASES
 setopt CORRECT
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
 
 compinit -C
 
