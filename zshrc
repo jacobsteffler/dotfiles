@@ -89,12 +89,9 @@ then
     if [[ -v SSH_CONNECTION  ]] && [[ ! -v TMUX ]];
     then
 
-        # Connect to or create the "zsh_tmux"
-        # session; close the session if tmux
-        # exits with a successful return code
-        tmux attach-session -t zsh_tmux || \
-            tmux new-session -s zsh_tmux && \
-            exit
+        # Connect to or create the "zsh_tmux" session;
+        # close the shell if tmux exits with a successful return code
+        { tmux attach-session -t zsh_tmux || tmux new-session -s zsh_tmux; } && exit
     fi
 
     # Use this command to close tmux with a
