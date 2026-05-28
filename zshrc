@@ -6,6 +6,7 @@ autoload -Uz select-word-style
 
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+zle -N edit-command-line
 
 select-word-style bash
 
@@ -21,6 +22,7 @@ bindkey "^[[H" beginning-of-line                # home
 bindkey "^[[F" end-of-line                      # end
 bindkey -v "^?" backward-delete-char            # backspace in vi mode
 bindkey '^[[Z' reverse-menu-complete            # shift-tab for completions
+bindkey '^G' edit-command-line                  # open command in $EDITOR
 
 HISTFILE=~/.zshhist
 HISTSIZE=1000
