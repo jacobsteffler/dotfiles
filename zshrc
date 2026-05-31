@@ -24,7 +24,7 @@ bindkey -v "^?" backward-delete-char            # backspace in vi mode
 bindkey '^[[Z' reverse-menu-complete            # shift-tab for completions
 bindkey '^G' edit-command-line                  # open command in $EDITOR
 
-HISTFILE=~/.zshhist
+HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 
