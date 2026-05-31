@@ -1,10 +1,14 @@
 vim.pack.add({
     'https://github.com/nvim-mini/mini.nvim',
+    'https://github.com/nvim-lualine/lualine.nvim',
     { src = 'https://github.com/dracula/vim', name = 'dracula' },
 })
 
-require('mini.icons').setup()
-require('mini.statusline').setup()
+require('lualine').setup({
+    options = {
+        icons_enabled = false,
+    },
+})
 require('mini.trailspace').setup()
 require('mini.move').setup()
 require('mini.pairs').setup()
