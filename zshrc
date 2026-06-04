@@ -53,8 +53,8 @@ fi
 
 alias gl='git pull'
 alias gp='git push'
+alias gpf='git push --force-with-lease'
 alias gst='git status'
-alias gf='git fetch -v'
 alias glog='git log --oneline --decorate --graph'
 
 alias ffmpeg='ffmpeg -hide_banner'
@@ -99,3 +99,7 @@ then
     # shell without closing the session
     alias umux='tmux detach -E false'
 fi
+
+take() {
+    mkdir -p "$1" && cd "$1"
+}
