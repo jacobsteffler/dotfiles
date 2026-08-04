@@ -71,10 +71,10 @@ fi
 
 if (( $+commands[eza] ));
 then
-    alias ls='eza -F'
-    alias ll='eza -F -l --header --group'
-    alias lt='eza -F -l --header --tree --group'
-    alias la='eza -F -l -a --header --group'
+    alias ls='eza'
+    alias ll='eza -l --header --group'
+    alias lt='eza -l --header --tree --group'
+    alias la='eza -l -a --header --group'
 fi
 
 if (( $+commands[bat] ));
